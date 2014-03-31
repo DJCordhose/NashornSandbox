@@ -1,0 +1,3 @@
+function passGlobalValue () {
+    return globalValue;
+}
