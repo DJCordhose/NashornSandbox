@@ -1,0 +1,30 @@
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+
+repositories {
+	maven {
+        url "https://maven.java.net/content/repositories/public/"
+    }
+}
+
+dependencies {
+    compile "com.oracle:avatar-js:0.10.25-SNAPSHOT"
+    compile "com.oracle:libavatar-js-win-x64:0.10.25-SNAPSHOT"
+}
+
+task copyLibs(type: Copy) {
+    from configurations.compile
+    into 'lib'
+}
+
+sourceSets {
+    main {
+        java {
+            srcDir 'src'
+        }
+        resources {
+            srcDir 'src '
+        }
+    }
+}
