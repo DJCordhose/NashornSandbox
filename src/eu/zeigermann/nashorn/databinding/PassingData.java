@@ -13,8 +13,11 @@ public class PassingData {
         int valueIn = 10;
         SimpleBindings simpleBindings = new SimpleBindings();
         simpleBindings.put("globalValue", valueIn);
+        nashorn.eval("print (globalValue)", simpleBindings);
+
         nashorn.eval("load('src/eu/zeigermann/nashorn/databinding/dataAccess.js')", simpleBindings);
         Integer valueOut = (Integer) nashorn.eval("passGlobalValue()", simpleBindings);
         System.out.println(valueIn == valueOut.intValue());
+
     }
 }
