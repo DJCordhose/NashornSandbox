@@ -20,5 +20,10 @@
 		<nature>org.nodeclipse.jjs.NashornNature</nature>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
+		<!-- Gradle IDE by Pivotal is optional e.g. to have Gradle Tasks View inside Eclipse 
+		(similar to Gradle GUI task tree, but without description) 
+		Line below would be added by Gradle IDE with "Convert To Gradle Project" 
+		to enable the Gradle tooling on a project by adding "Gradle Nature".-->
+		<nature>org.springsource.ide.eclipse.gradle.core.nature</nature>
 	</natures>
 </projectDescription>
