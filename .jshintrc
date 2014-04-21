@@ -1,13 +1,18 @@
 {
 	// --------------------------------------------------------------------
-	// JSHint Nodeclipse Configuration v0.11 
+	// JSHint Nodeclipse Configuration v0.15.1 
 	// Strict Edition with some relaxations and switch to Node.js, no `use strict`
 	// by Ory Band, Michael Haschke, Paul Verest
 	// https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/common-templates/.jshintrc
 	// JSHint Documentation is at http://www.jshint.com/docs/options/
 	// JSHint Integration v0.9.9 comes with JSHInt 2.1.10 , see https://github.com/eclipsesource/jshint-eclipse
+	// Known issues:
+	// newer JSHint can't be used  https://github.com/eclipsesource/jshint-eclipse/issues/75 that depends on JSHint issues. 
 	// --------------------------------------------------------------------
 	// from https://gist.github.com/haschek/2595796
+	//
+	// @author http://michael.haschke.biz/
+	// @license http://unlicense.org/
 	//
 	// This is a options template for [JSHint][1], using [JSHint example][2]
 	// and [Ory Band's example][3] as basis and setting config values to
@@ -20,10 +25,8 @@
 	//
 	// [1]: http://www.jshint.com/
 	// [2]: https://github.com/jshint/node-jshint/blob/master/example/config.json //404
-	// [3]: https://github.com/oryband/dotfiles/blob/master/jshintrc
-	//
-	// @author http://michael.haschke.biz/
-	// @license http://unlicense.org/
+	// [3]: https://github.com/oryband/dotfiles/blob/master/jshintrc //404
+	// [4]: http://www.jshint.com/options/
 	 
 	// == Enforcing Options ===============================================
 	//
@@ -68,6 +71,8 @@
 	"laxbreak" : false, // Tolerate unsafe line breaks e.g. `return [\n] x` without semicolons.
 	"laxcomma" : true, // Suppress warnings about comma-first coding style.
 	"loopfunc" : false, // Allow functions to be defined within loops.
+	"maxerr" : 100, // This options allows you to set the maximum amount of warnings JSHint will produce before giving up. Default is 50.
+	"moz" : false, // This options tells JSHint that your code uses Mozilla JavaScript extensions. Unless you develop specifically for the Firefox web browser you don't need this option.
 	"multistr" : false, // Tolerate multi-line strings.
 	"onecase" : false, // Tolerate switches with just one case.
 	"proto" : false, // Tolerate __proto__ property. This property is deprecated.
@@ -83,7 +88,7 @@
 	//
 	// These options pre-define global variables that are exposed by
 	// popular JavaScript libraries and runtime environments—such as
-	// browser or node.js.
+	// browser or node.js. TODO JSHint Documentation has more, but it is not clear since what JSHint version they appeared 
 	"browser" : false, // Standard browser globals e.g. `window`, `document`.
 	"couch" : false, // Enable globals exposed by CouchDB.
 	"devel" : false, // Allow development statements e.g. `console.log();`.
@@ -92,9 +97,12 @@
 	"mootools" : false, // Enable globals exposed by MooTools JavaScript framework.
 	"node" : true, // Enable globals available when code is running inside of the NodeJS runtime environment.
 	"nonstandard" : false, // Define non-standard but widely adopted globals such as escape and unescape.
+	"phantom" : false, //?since version? This option defines globals available when your core is running inside of the PhantomJS runtime environment.
 	"prototypejs" : false, // Enable globals exposed by Prototype JavaScript framework.
 	"rhino" : false, // Enable globals available when your code is running inside of the Rhino runtime environment.
+	"worker" : false, //?since version? This option defines globals available when your code is running inside of a Web Worker.
 	"wsh" : false, // Enable globals available when your code is running as a script for the Windows Script Host.
+	"yui" : false, //?since version? This option defines globals exposed by the YUI JavaScript framework.
 	
 	// == JSLint Legacy ===================================================
 	//
@@ -107,16 +115,14 @@
 	
 	// == Undocumented Options ============================================
 	//
-	// While I've found these options in [example1][2] and [example2][3]
+	// While Michael have found these options in [example1][2] and [example2][3] (already gone 404)
 	// they are not described in the [JSHint Options documentation][4].
-	//
-	// [4]: http://www.jshint.com/options/
 	 
-	"maxerr" : 100, // Maximum errors before stopping.
 	"predef" : [ // Extra globals.
-	//"exampleVar",
-	//"anotherCoolGlobal",
-	//"iLoveDouglas"
+		//"exampleVar",
+		//"anotherCoolGlobal",
+		//"iLoveDouglas"
+		"Java", "JavaFX", "$ARG" //no effect
 	]
 	//,	"indent" : 2 // Specify indentation spacing
 }
