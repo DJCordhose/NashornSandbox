@@ -68,6 +68,7 @@
 	"laxbreak" : false, // Tolerate unsafe line breaks e.g. `return [\n] x` without semicolons.
 	"laxcomma" : true, // Suppress warnings about comma-first coding style.
 	"loopfunc" : false, // Allow functions to be defined within loops.
+	"moz" : true, // This options tells JSHint that your code uses Mozilla JavaScript extensions.
 	"multistr" : false, // Tolerate multi-line strings.
 	"onecase" : false, // Tolerate switches with just one case.
 	"proto" : false, // Tolerate __proto__ property. This property is deprecated.
@@ -94,7 +95,7 @@
 	"nonstandard" : false, // Define non-standard but widely adopted globals such as escape and unescape.
 	"phantom" : false, //?since version? This option defines globals available when your core is running inside of the PhantomJS runtime environment.
 	"prototypejs" : false, // Enable globals exposed by Prototype JavaScript framework.
-	"rhino" : false, // Enable globals available when your code is running inside of the Rhino runtime environment.
+	"rhino" : true, // Enable globals available when your code is running inside of the Rhino runtime environment.
 	"worker" : false, //?since version? This option defines globals available when your code is running inside of a Web Worker.
 	"wsh" : false, // Enable globals available when your code is running as a script for the Windows Script Host.
 	"yui" : false, //?since version? This option defines globals exposed by the YUI JavaScript framework.
