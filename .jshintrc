@@ -1,6 +1,6 @@
 {
 	// --------------------------------------------------------------------
-	// JSHint Nodeclipse Configuration v0.11 
+	// JSHint Nodeclipse Configuration v0.15 
 	// Strict Edition with some relaxations and switch to Node.js, no `use strict`
 	// by Ory Band, Michael Haschke, Paul Verest
 	// https://github.com/Nodeclipse/nodeclipse-1/blob/master/org.nodeclipse.ui/templates/common-templates/.jshintrc
@@ -83,7 +83,7 @@
 	//
 	// These options pre-define global variables that are exposed by
 	// popular JavaScript libraries and runtime environments—such as
-	// browser or node.js.
+	// browser or node.js. TODO JSHint Documentation has more, but it is not clear since what JSHint version they appeared 
 	"browser" : false, // Standard browser globals e.g. `window`, `document`.
 	"couch" : false, // Enable globals exposed by CouchDB.
 	"devel" : false, // Allow development statements e.g. `console.log();`.
@@ -92,9 +92,12 @@
 	"mootools" : false, // Enable globals exposed by MooTools JavaScript framework.
 	"node" : true, // Enable globals available when code is running inside of the NodeJS runtime environment.
 	"nonstandard" : false, // Define non-standard but widely adopted globals such as escape and unescape.
+	"phantom" : false, //?since version? This option defines globals available when your core is running inside of the PhantomJS runtime environment.
 	"prototypejs" : false, // Enable globals exposed by Prototype JavaScript framework.
 	"rhino" : false, // Enable globals available when your code is running inside of the Rhino runtime environment.
+	"worker" : false, //?since version? This option defines globals available when your code is running inside of a Web Worker.
 	"wsh" : false, // Enable globals available when your code is running as a script for the Windows Script Host.
+	"yui" : false, //?since version? This option defines globals exposed by the YUI JavaScript framework.
 	
 	// == JSLint Legacy ===================================================
 	//
@@ -117,6 +120,8 @@
 	//"exampleVar",
 	//"anotherCoolGlobal",
 	//"iLoveDouglas"
+		"Java",
+		"JavaFX"
 	]
 	//,	"indent" : 2 // Specify indentation spacing
 }
