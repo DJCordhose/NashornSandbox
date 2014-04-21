@@ -121,8 +121,7 @@
 	//"exampleVar",
 	//"anotherCoolGlobal",
 	//"iLoveDouglas"
-		"Java",
-		"JavaFX"
+		"Java", "JavaFX", "$ARG"
 	]
 	//,	"indent" : 2 // Specify indentation spacing
 }
