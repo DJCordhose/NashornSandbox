@@ -19,7 +19,7 @@ dependencies {
 task copyLibs(type: Copy) {
     from configurations.compile
     into 'lib'
-    //TODO files needs to be renamed
+    //TODO files need to be renamed
 }
 
 sourceSets {
@@ -32,16 +32,6 @@ sourceSets {
         }
     }
 }
-
-// http://stackoverflow.com/questions/18486261/how-to-run-after-compiling-thru-gradle -> does not feet
-//apply plugin: 'application'
-/*
-mainClassName = "helloWorld.js"
-run {
-    //args 'arg1'
-    jvmArgs '-Djava.library.path=lib -jar lib/avatar-js.jar'
-}
-*/
 
 //http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
 task runHelloWorld1(type: Exec) {
