@@ -2,6 +2,9 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
 
+println "Gradle "+gradle.gradleVersion
+println "Java "+org.gradle.internal.jvm.Jvm.current()
+
 repositories {
 	maven {
         url "https://maven.java.net/content/repositories/public/"
@@ -16,6 +19,7 @@ dependencies {
 task copyLibs(type: Copy) {
     from configurations.compile
     into 'lib'
+    //TODO files needs to be renamed
 }
 
 sourceSets {
@@ -24,7 +28,32 @@ sourceSets {
             srcDir 'src'
         }
         resources {
-            srcDir 'src '
+            srcDir 'src'
         }
     }
+}
+
+// http://stackoverflow.com/questions/18486261/how-to-run-after-compiling-thru-gradle -> does not feet
+//apply plugin: 'application'
+/*
+mainClassName = "helloWorld.js"
+run {
+    //args 'arg1'
+    jvmArgs '-Djava.library.path=lib -jar lib/avatar-js.jar'
+}
+*/
+
+//http://stackoverflow.com/questions/23148214/gradle-task-to-run-nashorn-javascript
+task runHelloWorld1(type: Exec) {
+	println 'runHelloWorld1'
+    commandLine 'java', '-Djava.library.path=lib', '-jar', 'lib/avatar-js.jar', 'helloWorld.js'
+    println 'runHelloWorld1 finished'
+}
+task runHelloWorld2(type: JavaExec) {
+	println 'runHelloWorld2'
+    args 'helloWorld.js'
+    main 'com.oracle.avatar.js.Server'
+    systemProperties 'java.library.path':'lib'
+    classpath 'lib/avatar-js.jar'
+    println 'runHelloWorld2 finished'
 }
